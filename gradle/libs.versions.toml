@@ -1,0 +1,49 @@
+[versions]
+gradleplugin = "7.1.3"
+kotlin = "1.6.10"
+compose = "1.2.0"
+dagger = "2.46.1"
+retrofit = "2.9.0"
+room_version = "2.5.2"
+jupiter = "5.10.0"
+
+[libraries]
+android-compose = { module = "androidx.activity:activity-compose", version = "1.3.1" }
+android-core-ktx = { module = "androidx.core:core-ktx", version = "1.7.0" }
+android-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version = "2.3.1" }
+android-material = { module = "com.google.android.material:material", version = "1.5.0" }
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-ui-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+dagger-android = { module = "com.google.dagger:dagger-android", version.ref = "dagger" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+dagger-processor = { module = "com.google.dagger:dagger-android-processor", version.ref = "dagger" }
+retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit2-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+glide-compose = { module = "com.github.bumptech.glide:compose", version = "1.0.0-alpha.1" }
+jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "jupiter" }
+jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "jupiter" }
+jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "jupiter" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version = "4.1.0" }
+mockito-core = { module = "org.mockito:mockito-core", version = "5.4.0" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version = "1.7.3" }
+kluent = { module = "org.amshove.kluent:kluent-android", version = "1.73" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room_version" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room_version" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room_version" }
+turbine = { module = "app.cash.turbine:turbine", version = "1.0.0" }
+
+[bundles]
+baseui = ["android-core-ktx", "android-lifecycle", "android-compose", "android-material", "dagger", "dagger-android"]
+compose = ["compose-ui", "compose-ui-material", "compose-ui-tooling", "glide-compose"]
+daggercompiler = ["dagger-compiler", "dagger-processor"]
+retrofit = ["retrofit2", "retrofit2-gson"]
+room = ["room-ktx", "room-runtime"]
+basetesting = ["jupiter-api", "jupiter-params", "mockito-kotlin", "mockito-core", "coroutines-test", "kluent", "turbine"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "gradleplugin" }
+android-library = { id = "com.android.library", version.ref = "gradleplugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }

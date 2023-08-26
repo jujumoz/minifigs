@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_title">Click on one character to learn more about it</string>
+    <string name="retry">Retry</string>
+    <string name="nothing_to_show">Nothing to show.</string>
+</resources>
