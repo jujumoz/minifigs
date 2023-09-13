@@ -16,12 +16,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
-import com.bumptech.glide.integration.compose.GlideImage
 import com.sierra.common.domain.model.Minifig
+import com.sierra.common.ui.component.ImageImpl
 import com.sierra.common.ui.theme.AppTheme
 
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun CharacterRow(
     minifig: Minifig,
@@ -35,7 +33,7 @@ fun CharacterRow(
             .background(color = MaterialTheme.colors.background)
             .clickable { onMinifigClicked(minifig) }
     ) {
-        GlideImage(
+        ImageImpl(
             model = minifig.image(),
             modifier = Modifier.aspectRatio(1f),
             contentDescription = "character",

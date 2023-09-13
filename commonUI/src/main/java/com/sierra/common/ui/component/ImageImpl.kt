@@ -1,0 +1,42 @@
+package com.sierra.common.ui.component
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.DefaultAlpha
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalInspectionMode
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
+
+@OptIn(ExperimentalGlideComposeApi::class)
+@Composable
+fun ImageImpl(
+    model: Any?,
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+    alignment: Alignment = Alignment.Center,
+    contentScale: ContentScale = ContentScale.Fit,
+    alpha: Float = DefaultAlpha,
+    colorFilter: ColorFilter? = null,
+) {
+    if (LocalInspectionMode.current) {
+        Box(
+            modifier = modifier.background(color = Color.Magenta),
+        )
+    } else {
+        GlideImage(
+            model = model,
+            modifier = modifier,
+            contentDescription = contentDescription,
+            contentScale = contentScale,
+            alignment = alignment,
+            alpha = alpha,
+            colorFilter = colorFilter,
+        )
+    }
+}
